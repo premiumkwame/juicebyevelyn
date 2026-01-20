@@ -1,0 +1,6 @@
+User=agent:*
+Allow:/
+Disallow: /private/
+Disallow: /admin/
+
+sitemap: https://premiumkwame.github.io/hairgrowthoil/sitemap.xml
