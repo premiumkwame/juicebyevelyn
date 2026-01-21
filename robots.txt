@@ -3,4 +3,4 @@ Allow:/
 Disallow: /private/
 Disallow: /admin/
 
-sitemap: https://premiumkwame.github.io/hairgrowthoil/sitemap.xml
+sitemap: https://premiumkwame.github.io/juicebyevelyn/sitemap.xml
