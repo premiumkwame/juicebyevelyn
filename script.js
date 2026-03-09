@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const subject = `order for: ${selectedProduct}`;
         const body = `
-          Hello Mave's Neem Oil store,
+          Hello Juice by Evelyn store,
 
           I would like to place an order for the following items;
 
