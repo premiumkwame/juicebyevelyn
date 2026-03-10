@@ -68,3 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
         thankYou.scrollIntoView({ behavior: "smooth" });
     });
  });        
+
+ // Footer
+ // Dynamic Year
+ document.getElementById('year').textContent = new Date().getFullYear();
