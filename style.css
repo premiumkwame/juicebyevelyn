@@ -92,13 +92,14 @@
 /* IMAGE */
 .promo-box {
     position: relative;
+    display: inline-block;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .promo-box img {
-    width: 800px;
-    max-width: 90%;
+    width: 100px;
+    max-width: 800px;
     height: auto;
     display: block;
     border-radius: 12px;
