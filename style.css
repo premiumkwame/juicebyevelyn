@@ -92,21 +92,20 @@
 /* IMAGE */
 .promo-box {
     position: relative;
-    display: inline-block;
     border-radius: 12px;
     overflow: hidden;
 }
 
 .promo-box img {
-    width: 100px;
-    max-width: 800px;
+    width: 800px;
+    max-width: 90%;
     height: auto;
     display: block;
     border-radius: 12px;
 }
 
 /* CLOSE (X) BUTTON */
-.close-btn {
+.close-btn{
     position: absolute;
     top: 15px;
     right: 20px;
