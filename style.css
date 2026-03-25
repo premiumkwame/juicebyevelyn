@@ -132,6 +132,45 @@
             align-items: center;
         }
 
+       @media (max-width: 480px) {
+
+    .popup-container {
+        padding: 12px;
+        align-items: center;
+    }
+
+    /* Target Mailchimp embedded popup content */
+    .popup-container * {
+        box-sizing: border-box;
+    }
+
+    .popup-container form,
+    .popup-container .mc-modal,
+    .popup-container .popup-box {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    /* Fix scaling issue */
+    .popup-container {
+        transform: none !important;
+        zoom: 1 !important;
+    }
+
+    /* Inputs + buttons fit nicely */
+    .popup-container input,
+    .popup-container button {
+        width: 100% !important;
+        font-size: 16px; /* prevents iOS zoom */
+    }
+
+    /* Prevent overflow */
+    .popup-container {
+        overflow-y: auto;
+    }
+} 
+
+
         .popup-container{
             position: fixed;
             top: 0;
