@@ -33,6 +33,25 @@ body{
    z-index: 100;
 } */
 
+/* Hide burger CSS*/
+     .burger {
+         display: none;
+         font-size: 26px;
+        cursor: pointer;
+        z-index: 200; /* stays above header */
+         }
+
+         .active {
+            display: block;
+        }
+
+
+        .sub-nav a:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
 .container {
     width: 100;
     max-width: 1200px;
@@ -289,7 +308,7 @@ margin-bottom: 20px;
             align-items: center;
         }
 
-         @media (max-width: 480px) {
+         @media (max-width: 480px) { 
 
     .popup-container {
         padding: 12px;
@@ -503,5 +522,21 @@ margin-bottom: 20px;
 
     .purchase-form{
         padding: 20px;
+    }
+}
+
+@media(max-width: 480px){ 
+    .nav-main{
+        display: none;
+    }
+    .burger{
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: #312f2f;  /*make sure it's visible*/
+     }
+.nav-main.active{
+display:flex;
     }
 }
