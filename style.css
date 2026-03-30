@@ -17,7 +17,9 @@
             z-index: 1000;
         }
 
-        header h1 { margin: 0; font-size: 28px; }
+         header h1 { margin: 0; font-size: 28px; margin-right: 65%; }
+        .brand { margin: 0; font-size: 28px; height: 40px; width: auto;}
+
 
         nav a {
             color: white;
