@@ -349,7 +349,9 @@
         font-size: x-small;
         }
 
-        @media(max-width: 480px){ 
+
+
+@media(max-width: 768px){ 
     .nav-main{
         display: none;
     }
@@ -359,8 +361,19 @@
         top: 20px;
         right: 20px;
         color: #312f2f;  /*make sure it's visible*/
+
      }
 .nav-main.active{
-display:flex;
+  display: flex;
+    flex-direction: column;
     }
+
+header h1{
+    margin-right: 31%;
+    
 }
+}
+
+
+
+    
