@@ -5,11 +5,19 @@
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHSB0F2BZ6"></script>
 <script>
+
+  function loadAnalytics(){
+  var gtaScript= document.createElement("script")
+  gtaScript.async=true;
+ document.head.appendChild(gtaScript);
+
+ gtaScript.onload = function() {
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-MHSB0F2BZ6');
+  }
+  }
 </script>
 
     <meta charset="UTF-8">
@@ -943,6 +951,20 @@
         <p>All natural, vetted and approved by the FDA.</p>
     </section>
 </main>
+
+<div id="cookie=banner" class="cookie-banner">
+  <div class="cookie-content">
+    <p>
+      We use cookies to improve your experince and analyze traffic.
+      You can accept or manage your prefrences.
+    </p>
+
+    <div class="cookie-buttons">
+      <button id="accept-btn" class="btn-accept">Accept All</button>
+      <button id="decline-btn" class="btn-decline">Decline</button>
+    </div>
+  </div>
+</div>
 
 <!-- <footer id="contact">
     <p>Contact Us: kransly007@gmail.com | Phone: +233 20 321 3512</p>
