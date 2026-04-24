@@ -52,7 +52,7 @@
         nav a:hover { color: #f4b300e7; }
 
         .hero {
-            background: url('index-image/fruit\ background.png') center/cover no-repeat;
+            background: url('images/fruit\ background.png') center/cover no-repeat;
             height: 90vh;
             display: flex;
             align-items: center;
