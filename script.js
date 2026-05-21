@@ -31,6 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    function toggleMenu() {
+    document.querySelector(".burger").classList.toggle("active");
+    document.querySelector(".nav-main").classList.toggle("active");
+}
+
     // Handle form submission
     checkoutForm.addEventListener('submit', function (e) {
         e.preventDefault();

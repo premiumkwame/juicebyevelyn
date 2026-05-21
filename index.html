@@ -104,11 +104,13 @@
    <img src="images/jbelogo.png" alt="Juice by Evelyn Logo" class="brand">
    <h1>Juice by Evelyn</h1> 
      <!-- Burger Icon -->
-    <div class="burger" onclick="toggleMenu()">
-        <i class="fas fa-bars"></i>
-    </div>
+    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-    <nav class="nav-main">
+    <nav class="nav-main" id="mobile-menu">
         <a href="product.html">Products</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
