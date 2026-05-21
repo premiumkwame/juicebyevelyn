@@ -18,7 +18,7 @@
         }
 
          header h1 { margin: 0; font-size: 28px; margin-right: 65%; }
-        .brand { margin: 0; font-size: 28px; height: 40px; width: auto;}
+        .brand { margin: 0; font-size: 28px; height: 40px; width: auto; border-radius: 50%;}
 
 
         nav a {
