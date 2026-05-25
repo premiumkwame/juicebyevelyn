@@ -4,7 +4,7 @@
     --accent-color:#75cc4a;
     --light-color: #ecf0f1;
     --dark-color:#2c3e50;
-    --text-color:#333;
+    --text-color:#ffffff;
     --text-light:#7f8c8d;
 }
 
@@ -21,17 +21,20 @@ body{
     line-height: 1.6;   
 }
 
-   header h1 { margin-right: 68%; }
+        header {
+            background: #45c052ec;
+            color: white;
+            padding: 20px 10px;
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-
-/* header{
-   background-color: white;
-   padding: 20px 0;
-   box-shadow: 0 2px 10px rgb(0, 0, 0, 0.1);
-   position: sticky;
-   top: 0;
-   z-index: 100;
-} */
+         header h1 {font-size: 28px; padding-left: 5px;}
+        .brand { margin: 0; font-size: 28px; height: 40px; width: auto; border-radius: 50%;}
 
 /* burger icon CSS*/
         .burger{
@@ -119,12 +122,13 @@ body{
     justify-content: center;
     gap: 25px;
     flex-wrap: wrap;
+    margin-left: 69%;
 }
 
 .nav-main a{
     text-decoration: none; 
-    color: #666;
-    font-size: 14px;
+    color: #fefcfc;
+    font-size: 20px;
 }
 
 .sale-tag{
@@ -501,10 +505,10 @@ margin-bottom: 20px;
         }
 
 
-    /* Footer */
+        /* Footer */
         footer {
-            background-color: #2c3e50;
-            color: white;
+            background-color: #f0eee6;
+            color: black;
             padding: 60px 0 30px;
             text-align: center;
         }
@@ -548,27 +552,28 @@ margin-bottom: 20px;
         }
 
 
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-            margin-top: 1.5rem;
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-        
+    .social-icons {
+    display: flex;
+    justify-content: center; 
+    gap: 15px;
+    margin-top: 1.5rem;
+    width: 100%;  
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgb(7, 0, 0);
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+       
         .social-icons a:hover {
             background: var(--primary);
-            color: #ddd;
+            color: #f9f8f8;
             transform: translateY(-3px);
         }
         
@@ -580,8 +585,6 @@ margin-bottom: 20px;
             color: #aaa;
         }
 
-       
-
         .footer-line{
         border: none;
         border-top: 1px solid #cfcece;
@@ -591,7 +594,6 @@ margin-bottom: 20px;
         .copy{
         font-size: x-small;
         }
-
 
 @media(max-width:768px){
 
@@ -609,7 +611,7 @@ margin-bottom: 20px;
         margin: 0;
         font-size: 22px;
         text-align: left;
-        margin-right: 44%;
+        margin-right: 40%;
     }
 
     /* Hide Desktop Nav */
