@@ -2,25 +2,24 @@
 <html lang="en">
 <head>
 
-<!-- Google tag (gtag.js) -->
+    <!-- Google Analytics 4 (GA4) - TARGET CART & ECOMMERCE EVENTS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MHSB0F2BZ6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-MHSB0F2BZ6');
 
-<script>
-
-  function loadAnalytics(){
-  var gtaScript= document.createElement("script")
-  gtaScript.src="https://www.googletagmanager.com/gtag/js?id=G-MHSB0F2BZ6";
-  gtaScript.async=true;
-  document.head.appendChild(gtaScript);
-
- gtaScript.onload = function() {
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-MHSB0F2BZ6');
-  }
-  }
-</script>
-
+      // Helper function to track custom ecommerce events (cart, checkout)
+      window.trackEcommerceEvent = function(eventName, ecommerceData) {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', eventName, ecommerceData);
+          console.log(`[GA4] ${eventName} tracked:`, ecommerceData);
+        } else {
+          console.log(`GA4 not configured yet. Event: ${eventName}`, ecommerceData);
+        }
+      };
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,186 +83,126 @@
     }
     </script>
 
-<!-- CSS -->
-<link rel="stylesheet" href="product.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
+    <!-- CSS -->
+    <link rel="stylesheet" href="product.css">
+    <!-- Fixed font-awesome versioning path to standard 6.x stable CDN if rendering issues occur -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-
-     <header>
-     <img src="images/jbelogo.png" alt="Juice by Evelyn Logo" class="brand"> 
- <h1>Juice by Evelyn</h1>
- <!-- Burger Icon -->
-    <button class="burger" onclick="toggleMenu()" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <nav class="nav-main" id="mobile-menu">
-        <a href="index.html">Home</a>
-        <a href="#"> Fruit Juices </a>
-         
-    </nav>
-    </header>
-
-    <div class="products-container">
-
-<!-- card 1 -->
-    <div class="product-card">
-    <div class="product-image">
-        <img src="images/pinapplejuice.png" alt="Digestive Glow (referencing bromelain) or Pine-Cleanse (referencing detoxifying properties)">
+    
+<header>
+    <img src="images/jbelogo.png" alt="Juice by Evelyn Logo" class="brand"> 
+    <div class="Brand">
+        <h1>Juice by Evelyn</h1>
     </div>
-    <div class="product-info">
-        <div class="brand">Evelyn's Pinapple Juice </div>
-        <div class="product-name">Pinapple Juice 350ml</div>
-        
-        <div class="prices">
-           <span class="current-price" >₵35</span>
-        </div>
-        <button class="buy-now-btn" data-product="Pineapple"  data-price="35" data-image="images\pinapplejuice.png">Buy Now</button>
-        </div>
+    
+    <button class="burger" id="mobile-menu-btn" aria-label="Toggle Navigation">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
+    <div class="nav-main" id="mobileNavMenu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </div>
-
     
+    <div class="cart-icon" id="cartIconBtn" role="button" aria-label="View Shopping Cart">
+        🛒 <span class="cart-count" id="cartCountBadge">0</span>
+    </div>
+</header>
 
-
-
-
-
-
-<!-- card 2 -->
-
-       <div class="product-card">
-        <div class="product-image">
-    
-            <img src="images/apple juice.png" alt="Antioxidant Apple or Vitality Press (referencing energy boost)">
-    
+<main>
+    <!-- Products Section -->
+    <section id="products">
+        <div class="products-container" id="productsContainer">
+            <!-- Product cards dynamically injected via product1.js -->
         </div>
-    
-        <div class="product-info">
-            <div class="brand">Evelyn's Apple Juice </div>
-            <div class="product-name">Apple Juice 350ml</div>
-            
-            <div class="prices">
-               <span class="current-price" >₵50</span>
+    </section>
+
+    <!-- Cart Sidebar Overlay -->
+    <div class="overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar" aria-label="Shopping Cart Sidebar">
+        <div class="cart-header">
+            <h3>Your Cart 🛍️</h3>
+            <button class="close-cart" id="closeCartBtn" aria-label="Close Cart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItemsList">
+            <div class="empty-cart-msg">Cart is empty</div>
+        </div>
+        <div class="cart-total" id="cartTotalPrice">Total: ₵0</div>
+        <button class="checkout-cart-btn" id="proceedCheckoutFromCart">Proceed to Checkout</button>
+    </aside>
+
+    <!-- Purchase Order Section -->
+    <section id="purchaseForm" class="purchase-form" style="display: none;">     
+        <h2>Complete your Purchase</h2>
+        
+        <!-- Multi-item or Single Item summary container -->
+        <div class="product-sumary" id="orderSummaryContainer">
+            <img id="selectedProductImage" src="" alt="Selected Product View">
+            <div>
+                <h3 id="selectedProductName"></h3>
+                <p id="selectedProductPrice"></p>
             </div>
-<button class="buy-now-btn" data-product="Apple"  data-price="50" data-image="images\apple juice.png">Buy Now</button>
-            </div>
-           </div>
-
-
-
-
-<!-- card 3 -->
-
-           <div class="product-card">
-            <div class="product-image">
-        
-                <img src="images/watermelon juice.png" alt="The Hydrator or Watermelon Quench (referencing hydration)">
-        
-            </div>
-        
-            <div class="product-info">
-                <div class="brand">Evelyn's Watermelon Juice </div>
-                <div class="product-name">Watermelon Juice 350ml</div>
-                
-                <div class="prices">
-                   <span class="current-price" >₵35</span>
-                </div>
-                <button class="buy-now-btn" data-product="Watermelon"  data-price="35" data-image="images\watermelon juice.png">Buy Now</button>
-                </div>
-               </div>
-
-
-
-<!-- card 4 -->
-
-               <div class="product-card">
-                <div class="product-image">
-            
-                    <img src="images/orangejuice.png" alt="Immune Booster or Vitamin C Squeeze (referencing immune support and vitamin C content)">
-            
-                </div>
-            
-                <div class="product-info">
-                    <div class="brand">Evelyn's Orange Juice </div>
-                    <div class="product-name">Orange Juice 350ml</div>
-                    
-                    <div class="prices">
-                       <span class="current-price" >₵40</span>
-                    </div>
-                    <button  class="buy-now-btn" data-product="Orange"  data-price="40" data-image="images\orangejuice.png">Buy Now</button>
-                    </div>
-                   </div>
-              
-                  </div>
-
-
-
-          <div id="purchaseForm" class="purchase-form">     
-            <h2>Complete your Purchase</h2>
-            <div class="product-sumary">
-        <img id="selectedProductImage" src="" alt="selected product" >
-        
-        <div>
-            <h3 id="selectedProductName"></h3>
-            <p id="selectedProductPrice"></p>
         </div>
 
-         </div>
-
-         <form id="checkoutForm">
-
+        <form id="checkoutForm">
             <div class="form-group">
-                <label for="name">Full Name </label>
-                <input type="text" id="name" name="name" required>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required autocomplete="name">
             </div>
-
-
-             <div class="form-group">
-                <label for="email">Email Address </label>
-                <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required autocomplete="email">
             </div>
-
-               <div class="form-group">
-                <label for="address">Shipping Address </label>
-                <input type="address" id="address" name="address" required>
+            <div class="form-group">
+                <label for="address">Delivery Address (Details/Landmarks)</label>
+                <input type="text" id="address" required autocomplete="street-address">
             </div>
-
-             <div class="form-group">
-                <label for="phone">Phone Number </label>
-                <input type="phone" id="phone" name="phone" required>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" required autocomplete="tel">
             </div>
+            
+            <!-- Hidden input field to temporarily pass multi-item lists into the mailto parser if needed -->
+            <input type="hidden" id="hiddenCartData" name="hiddenCartData">
+            
+            <button type="submit" class="submit-btn">Send Order via Email</button>
+        </form>
+        
+        <div class="email-instructions">
+            <h3>How it Works</h3>
+            <p>Clicking send opens your native email app or client with your pre-filled cart order. Review details and press send to lock it in!</p>
+        </div>
+    </section>
 
-              <button type="submit" class="submit-btn">Send Order via Email</button>
-            </form>
+    <!-- Post-submission feedback view -->
+    <section id="thankYou" class="thank-you" style="display: none;">
+        <h2>✅ Thank You For Your Purchase!</h2>
+        <p>Your order configuration is complete. Please look out for your email client layout prompt to finalize submission.</p>
+    </section>
+</main>
 
-            <div class="email-instructions">
-                <h3>How it Works</h3>
-                <p>When you click "send Order vai email",
-                    your default email client will open
-                    with a pre-filled email containing your order
-                    details. Simply review the information and click
-                     send to place your order.
-                </p>
-            </div>
-         </div>
+<!-- PROMO -->
+    <div class="promo-overlay" id="promo">
+  
+  <div class="promo-box">
+      <span class="close-btn" onclick="closePromo()">X</span> 
+      
+      <img src="images/promoflyer.png" loading="lazy" fetchpriority="high" alt="Promo">
+  </div>
 
-            <div id="thankYou" class="thank-you">
-            <i class="fas fa-check-circle"></i>
-            <h2>Thank You For Your Purchase</h2>
-             
-            <p>Your order email has been prepared.
-             please check your email client
-             and click send to complete your order.
-            </p>
-            <p>We'll process your order once we receive your email.</p>
+</div>
 
-          </div>
 
-        <div id="mc_embed_shell"  class="popup-container" style="display:none;">
+
+<div id="mc_embed_shell"  class="popup-container" style="display:none;">
       <!-- <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"> -->
   <style type="text/css">
         #mc_embed_signup{
@@ -1080,7 +1019,8 @@
     });
     </script></div>
 
-    <div id="cookie-banner" class="cookie-banner">
+
+ <div id="cookie-banner" class="cookie-banner">
   <div class="cookie-content">
     <p>
      🍪We use cookies to improve your experince and analyze traffic.
@@ -1095,14 +1035,8 @@
 </div>
 
 
-    <!-- Footer -->
-    <!-- <footer id="contact">
-        <p>Contact Us: kransly007@gmail.com | Phone: +233 20 321 3512</p>
-        <p>© Juice by Evelyn. All Rights Reserved.</p>
-    </footer> -->
 
-<!-- Footer -->
-     <footer>
+ <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -1140,8 +1074,6 @@
               </div>
              </div>
                  
-               
-           
          <hr class="footer-line" >
             <div class="year">
                 <p class="copy">&copy; <span id="year"></span>  Juice by Evelyn. All Rights Reserved. Powered by DaveTech <a style="color: beige;" href="mailto:kransly007@outlook.com"></a></p>
@@ -1149,10 +1081,8 @@
         </div>
         </div>
     </footer>
-    
-<script src="script.js"></script>
 
-<script>
+    <script>
 document.addEventListener("DOMContentLoaded", function() {
     const closeBtn = document.querySelector(".close-popup");
     const popup = document.getElementById("mc_embed_shell");
@@ -1165,10 +1095,10 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script src="productpopupscript.js"></script>
 <script src="burgericon.js"></script>
 <script src="cookie.js"></script>
-<script src="popupform.js"></script>
+<script src="productpopupscript.js"></script>
+<script src="product.js"></script>
 
 </body>
 </html>

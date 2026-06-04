@@ -75,6 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
  });        
 
  // Footer
- // Dynamic Year
- document.getElementById('year').textContent = new Date().getFullYear();
+//   Dynamic Year
+  document.getElementById('year').textContent = new Date().getFullYear();
 
