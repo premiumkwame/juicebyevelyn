@@ -8,7 +8,7 @@
         header {
             background: #45c052ec;
             color: white;
-            padding: 20px 10px;
+            padding: 25px 50px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -328,13 +328,6 @@
             to { transform: translate(-50%, 0); opacity: 1; }
         }
 
-       /* footer {
-            background: #111;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        } */
 
         /* Footer */
         footer {
