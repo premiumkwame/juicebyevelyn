@@ -149,7 +149,7 @@ header img.brand {
          .burger span{
          width: 24px;
          height: 3px;
-         background: white;
+         background: black;
          border-radius: 20px;
          transition: all 0.3s ease;
 }       
