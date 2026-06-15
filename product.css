@@ -29,8 +29,8 @@ body {
    Header & Navigation
    ========================================================================== */
 header {
-    background-color: #45c052ec;
-    color: white;
+    background-color: #f0eee6;
+    color: black;
     padding: 1rem 2rem;
     display: flex;
     /* justify-content: space-between; */
