@@ -121,60 +121,95 @@
 </header>
 
 
- <!-- Contact Page -->
-        <section id="contact" class="page">
-            <h2 style="text-align: center; margin-bottom: 2rem;">Get In Touch</h2> 
-            <p style="text-align: center; margin-bottom: 2rem;">We'd love to hear from you. Reach out to place orders or for any inquiries.</p>
-           
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-details">
-                        <p><i class="fas fa-map-marker-alt"></i> 123 Ghana Way, Plainfield, IL 60544</p>
-                        <p><i class="fas fa-phone"></i> (815) 123-4567</p>
-                        <p><i class="fas fa-envelope"></i> info@excelfoodbar.com</p>
-                        <p><i class="fas fa-clock"></i> Mon-Sat: 10am-8pm, Sun: 11am-6pm</p>
-                    </div>
-                   
-                    <h3>Follow Us</h3>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-               
-                <div class="contact-form">
-                    <h3>Send Us a Message</h3>
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-            </div>
-           
-            <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!4v1775124005562!6m8!1m7!1ses_ltJVrifVVx61KwwSkNg!2m2!1d5.546414340449162!2d-0.2682922592219948!3f87.4953134532454!4f-9.52631723970265!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </section>
-    </main>
+ <!-- Modern Contact Section -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <div class="contact-header">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you. Reach out to place orders or for any inquiries.</p>
+        </div>
 
+        <div class="contact-grid-wrapper">
+            <!-- Left Column: Contact Info Cards -->
+            <div class="contact-info-panel">
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="info-text">
+                        <h3>Our Location</h3>
+                        <p>Dansoman, Control</p>
+                        <p>Accra, Ghana</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-phone"></i></div>
+                    <div class="info-text">
+                        <h3>Call Us</h3>
+                        <p><a href="tel:0203213512">0203213512</a></p>
+                        <p><a href="tel:0537127352">0537127352</a></p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon"><i class="fas fa-clock"></i></div>
+                    <div class="info-text">
+                        <h3>Opening Hours</h3>
+                        <p>Mon - Sat: 8:00 AM - 6:00 PM</p>
+                        <p>Sunday: Closed</p>
+                    </div>
+                </div>
+
+                <!-- Modernized Social Block -->
+                <div class="social-block">
+                    <h3>Follow Our Journey</h3>
+                    <div class="social-links-grid">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Interactive Form Card -->
+            <div class="contact-form-panel">
+                <h3>Send Us a Message</h3>
+                <form id="contactForm" class="modern-form">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="John Doe" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" placeholder="e.g. 0244000000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" rows="4" placeholder="Tell us what you'd like to order..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Send Message
+                        <span class="btn-arrow">→</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Integrated Map Container -->
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!4v1775124005562!6m8!1m7!1ses_ltJVrifVVx61KwwSkNg!2m2!1d5.546414340449162!2d-0.2682922592219948!3f87.4953134532454!4f-9.52631723970265!5f0.7820865974627469" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+   
     <script src="script.js"></script>
     <script src="burgericon.js"></script>
 
