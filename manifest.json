@@ -3,18 +3,18 @@
   "name": "Juice by Evelyn",
   "icons": [
     {
-      "src": "/images/jbelogoA1.png",
+      "src": "/juicebyevelyn/images/jbelogoA1.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/images/jbelogoA2.png",
+      "src": "/juicebyevelyn/images/jbelogoA2.png",
       "type": "image/png",
       "sizes": "512x512",
       "purpose": "any maskable"
     }
-    ],
-  "start_url": "/",
+  ],
+  "start_url": "/juicebyevelyn/",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "display": "standalone",
