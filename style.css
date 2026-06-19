@@ -522,33 +522,37 @@ footer {
 
 @media (max-width: 480px) { 
     .popup-container {
-        padding: 12px;
+        padding: 15px;
         align-items: center;
-    }
-
-    .popup-container * {
         box-sizing: border-box;
+        overflow-y: auto;
     }
 
+    /* Force EVERYTHING inside the popup to respect mobile screen boundaries */
+    .popup-container *, 
     .popup-container form,
     .popup-container .mc-modal,
-    .popup-container .popup-box {
-        width: 100% !important;
-        max-width: 100% !important;
+    .popup-container .popup-box,
+    #mc_embed_shell,
+    #mc_embed_signup {
+        box-sizing: border-box ;
+        width: 100% ;
+        max-width: 100% ;
+        margin-left: 0 ;
+        margin-right: 0 ;
     }
 
-    .popup-container {
-        transform: none !important;
-        zoom: 1 !important;
-    }
-
+    /* Ensure inputs and buttons don't poke out because of default margins */
     .popup-container input,
     .popup-container button {
-        width: 100% !important;
+        width: 100% ;
+        max-width: 100% ;
         font-size: 16px;
+        box-sizing: border-box ;
     }
 
     .popup-container {
-        overflow-y: auto;
+        transform: none ;
+        zoom: 1 ;
     }
 }
