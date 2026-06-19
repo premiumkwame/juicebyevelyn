@@ -214,9 +214,9 @@ nav a:hover {
     align-items: center;
     background: rgba(0, 0, 14, 0.299); 
     backdrop-filter: blur(2px); 
-    z-index: 10000;  
+    z-index: 10000 ;  
 }
-
+/* IMAGE */
 .promo-box {
     position: relative;
     border-radius: 12px;
@@ -225,7 +225,6 @@ nav a:hover {
     max-width: 90%;
     margin: auto; 
 }
-
 .promo-box img {
     width: 100%;
     max-width: 800px;
@@ -233,8 +232,8 @@ nav a:hover {
     display: block;
     border-radius: 12px;
 }
-
-.close-btn {
+/* CLOSE (X) BUTTON */
+.close-btn{
     position: absolute;
     top: 15px;
     right: 20px;
@@ -252,6 +251,7 @@ nav a:hover {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: all 0.3s ease;
 }
+
 
 /* ==========================================================================
    Mailchimp & Popups
