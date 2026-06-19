@@ -1039,6 +1039,19 @@
         </div>
     </footer>
 
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const closeBtn = document.querySelector(".close-popup");
+    const popup = document.getElementById("mc_embed_shell");
+
+    if (closeBtn && popup) {
+        closeBtn.addEventListener("click", function() {
+            popup.style.display = "none";
+        });
+    }
+});
+</script>
+
 <script src="popupscript.js"></script>
 <script src="burgericon.js"></script>
 <script src="cookie.js"></script>
