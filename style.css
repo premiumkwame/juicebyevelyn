@@ -201,7 +201,7 @@ nav a:hover {
 .product-card p { font-size: 15px; }
 
 /* ==========================================================================
-   Promo Overlay System Modifiers
+   Promo Overlay 
    ========================================================================== */
 .promo-overlay {
     position: fixed;
@@ -235,10 +235,9 @@ nav a:hover {
 /* CLOSE (X) BUTTON */
 .close-btn{
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     font-size: 22px;
-    font-weight: bold;
     cursor: pointer;
     color: #111;
     background: white;
@@ -289,8 +288,8 @@ nav a:hover {
 
 .close-popup {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
@@ -522,37 +521,33 @@ footer {
 
 @media (max-width: 480px) { 
     .popup-container {
-        padding: 15px;
+        padding: 12px;
         align-items: center;
-        box-sizing: border-box;
-        overflow-y: auto;
     }
 
-    /* Force EVERYTHING inside the popup to respect mobile screen boundaries */
-    .popup-container *, 
+    .popup-container * {
+        box-sizing: border-box;
+    }
+
     .popup-container form,
     .popup-container .mc-modal,
-    .popup-container .popup-box,
-    #mc_embed_shell,
-    #mc_embed_signup {
-        box-sizing: border-box ;
-        width: 100% ;
-        max-width: 100% ;
-        margin-left: 0 ;
-        margin-right: 0 ;
-    }
-
-    /* Ensure inputs and buttons don't poke out because of default margins */
-    .popup-container input,
-    .popup-container button {
-        width: 100% ;
-        max-width: 100% ;
-        font-size: 16px;
-        box-sizing: border-box ;
+    .popup-container .popup-box {
+        width: 100% !important;
+        max-width: 100% !important;
     }
 
     .popup-container {
-        transform: none ;
-        zoom: 1 ;
+        transform: none !important;
+        zoom: 1 !important;
+    }
+
+    .popup-container input,
+    .popup-container button {
+        width: 100% !important;
+        font-size: 16px;
+    }
+
+    .popup-container {
+        overflow-y: auto;
     }
 }

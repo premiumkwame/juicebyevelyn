@@ -607,10 +607,9 @@ header img.brand {
 /* CLOSE (X) BUTTON */
 .close-btn{
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     font-size: 22px;
-    font-weight: bold;
     cursor: pointer;
     color: #111;
     background: white;
@@ -661,8 +660,8 @@ header img.brand {
 
 .close-popup {
     position: absolute;
-    top: 15px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     font-size: 22px;
     font-weight: bold;
     cursor: pointer;
