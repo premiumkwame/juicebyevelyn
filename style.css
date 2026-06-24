@@ -10,16 +10,17 @@ body {
    Header & Navigation Fixes (Perfect Flexbox Alignment)
    ========================================================================== */
 header {
-    background: #f0eee6;
+    background-color: #f0eee6;
     color: black;
-    padding: 15px 50px;
+    padding: 1rem 2rem;
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
+    gap: 1rem;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 900;
+    box-shadow: var(--shadow-sm);
 }
 
 /* Custom wrapper wrapper handles text grouping next to the brand img */
@@ -455,7 +456,7 @@ footer {
     }
 
     header {
-        padding: 15px 20px;
+        padding: 18px 15px;
     }
 
     header h1 {
@@ -536,6 +537,8 @@ footer {
         max-width: 100% !important;
     }
 
+    #mc_
+
     .popup-container {
         transform: none !important;
         zoom: 1 !important;
@@ -550,4 +553,5 @@ footer {
     .popup-container {
         overflow-y: auto;
     }
+
 }
