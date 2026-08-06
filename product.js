@@ -8,7 +8,11 @@ const products = [
     { id: 1, name: "Pineapple Juice 350ml", brand: "Juice by Evelyn", price: 15, originalPrice: 20, discount: "10%", image: "images/pineapplejuice.png", alt: "Digestive Glow (referencing bromelain) or Pine-Cleanse (referencing detoxifying properties)" },
     { id: 2, name: "Apple Juice 350ml", brand: "Juice by Evelyn", price: 20, originalPrice: 25, discount: "10%", image: "images/applejuice.png", alt: "Fresh Apple Juice for a healthy boost" },
     { id: 3, name: "Watermelon Juice 350ml", brand: "Juice by Evelyn", price: 15, originalPrice: 20, discount: "10%", image: "images/watermelonjuice.png", alt: "Refreshing Watermelon Juice for summer" },
-    { id: 4, name: "Orange Juice 350ml", brand: "Juice by Evelyn", price: 15, originalPrice: 20, discount: "10%", image: "images/orangejuice.png", alt: "Vitamin C Rich Orange Juice for immunity" }
+    { id: 4, name: "Orange Juice 350ml", brand: "Juice by Evelyn", price: 15, originalPrice: 20, discount: "10%", image: "images/orangejuice.png", alt: "Vitamin C Rich Orange Juice for immunity" },
+    { id: 5, name: "Ghana Meatpie", brand: "Juice by Evelyn", price: 15, originalPrice: 25, discount: "10%", image: "images/meatpie.jpeg", alt: "Chicken Stuffed Meatpie"},
+    { id: 6, name: "Samosas", brand: "Juice by Evelyn", price: 10, originalPrice: 20, discount: "10%", image: "images/samosas.jpeg", alt: "Crispy Samosas" },
+    { id: 7, name: "Crispy Spring Rolls", brand: "Juice by Evelyn", price: 10, originalPrice: 20, discount: "10%", image: "images/springrolls.jpg", alt: "Crispy Spring Rolls" },
+    { id: 8, name: "Ghana Rockbuns", brand: "Juice by Evelyn", price: 10, originalPrice: 20, discount: "10%", image: "images/rockbuns.jpeg", alt: "Sweet & Soft Rockies" },
 ];
 
 // Active State Trackers
