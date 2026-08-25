@@ -1,8 +1,3 @@
-/**
- * Juice by Evelyn - E-commerce Engine & Tracking Module
- * Production Script v2.1 (Updated: 2026)
- */
-
 // ---------- PRODUCT DATABASE ----------
 const products = [
     { id: 1, name: "Pineapple Juice 350ml", brand: "Juice by Evelyn", price: 15, originalPrice: 20, discount: "10%", image: "images/pineapplejuice.png", alt: "Digestive Glow (referencing bromelain) or Pine-Cleanse (referencing detoxifying properties)" },
@@ -293,7 +288,9 @@ function identifyBrevoCustomer(name, email) {
         document.getElementById('thankYou').style.display = 'none';
         document.getElementById('cartSidebar').classList.remove('open');
         document.getElementById('cartOverlay').classList.remove('active');
-
+        document.getElementById('purchaseForm').scrollIntoView({ behavior: 'smooth' });
+    });
+    
     // Email checkout
     document.getElementById('checkoutForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -310,7 +307,7 @@ function identifyBrevoCustomer(name, email) {
             totalOrder = window.currentBuyNowProduct.price;
         } else { orderDetails = 'No product'; }
         const subject = `New Order from ${name}`;
-        const body = `Hello Kantamanto,\n\nI would like to place an order:\n\n${orderDetails}\n\nTotal: ₵${totalOrder}\n\nMy details:\n- Name: ${name}\n- Email: ${email}\n- Address: ${address}\n- Phone: ${phone}\n\nPlease confirm.`;
+        const body = `Hello Juice by Evelyn,\n\nI would like to place an order:\n\n${orderDetails}\n\nTotal: ₵${totalOrder}\n\nMy details:\n- Name: ${name}\n- Email: ${email}\n- Address: ${address}\n- Phone: ${phone}\n\nPlease confirm.`;
         window.location.href = `mailto:kransly007@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
         if (window.trackEcommerceEvent) window.trackEcommerceEvent('generate_lead', { currency: 'GHS', value: totalOrder });
         document.getElementById('purchaseForm').style.display = 'none';
